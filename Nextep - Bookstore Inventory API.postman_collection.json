@@ -1,0 +1,987 @@
+{
+  "info": {
+    "_postman_id": "898172ce-d0b7-4912-bbfc-83c8db3abbf7",
+    "name": "Nextep - Bookstore Inventory API",
+    "description": "Colección completa con los endpoints CRUD básicos, filtros de búsqueda y la integración con la API de tasas de cambio para calcular el precio de venta local.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44628130"
+  },
+  "item": [
+    {
+      "name": "Endpoints Opcionales Extras :)",
+      "item": [
+        {
+          "name": "8. Buscar por Categoría (Filtro)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/books/?category=Literatura",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "Literatura"
+                }
+              ]
+            },
+            "description": "Endpoint opcional: Busca libros filtrando por coincidencias en el campo categoría."
+          },
+          "response": [
+            {
+              "name": "Buscar por Fantasía",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8000/api/books/?category=Fantasía",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "books",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "Fantasía"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 31 Mar 2026 18:14:15 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.15"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Cookie"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "351"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"title\": \"El Quijote\",\n            \"author\": \"Miguel de Cervantes\",\n            \"isbn\": \"978-84-376-0494-7\",\n            \"cost_usd\": \"15.99\",\n            \"selling_price_local\": \"19.52\",\n            \"stock_quantity\": 25,\n            \"category\": \"Literatura Clásica\",\n            \"supplier_country\": \"ES\",\n            \"created_at\": \"2026-03-31T17:57:57.140567Z\",\n            \"updated_at\": \"2026-03-31T18:00:05.214620Z\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "Buscar por literatura",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8000/api/books/?category=Literatura",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "books",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "Literatura"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 31 Mar 2026 18:18:44 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.15"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Cookie"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "351"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"title\": \"El Quijote\",\n            \"author\": \"Miguel de Cervantes\",\n            \"isbn\": \"978-84-376-0494-7\",\n            \"cost_usd\": \"15.99\",\n            \"selling_price_local\": \"19.52\",\n            \"stock_quantity\": 25,\n            \"category\": \"Literatura Clásica\",\n            \"supplier_country\": \"ES\",\n            \"created_at\": \"2026-03-31T17:57:57.140567Z\",\n            \"updated_at\": \"2026-03-31T18:00:05.214620Z\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "7. Alerta de Stock Bajo (Filtro)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/books/low-stock/?threshold=30",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                "low-stock",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "threshold",
+                  "value": "30"
+                }
+              ]
+            },
+            "description": "Endpoint opcional: Devuelve los libros cuya cantidad en inventario es menor o igual al umbral especificado."
+          },
+          "response": [
+            {
+              "name": "Buscar libros con 24 o menos existencias",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8000/api/books/low-stock/?threshold=24",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "books",
+                    "low-stock",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "threshold",
+                      "value": "24"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 31 Mar 2026 18:16:23 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.15"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Cookie"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "52"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"count\": 0,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": []\n}"
+            },
+            {
+              "name": "Buscar libros con 25 o menos existencias",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8000/api/books/low-stock/?threshold=25",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "books",
+                    "low-stock",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "threshold",
+                      "value": "25"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 31 Mar 2026 18:17:44 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.15"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Cookie"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "655"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"title\": \"El Quijote\",\n            \"author\": \"Miguel de Cervantes\",\n            \"isbn\": \"978-84-376-0494-7\",\n            \"cost_usd\": \"15.99\",\n            \"selling_price_local\": \"19.52\",\n            \"stock_quantity\": 25,\n            \"category\": \"Literatura Clásica\",\n            \"supplier_country\": \"ES\",\n            \"created_at\": \"2026-03-31T17:57:57.140567Z\",\n            \"updated_at\": \"2026-03-31T18:00:05.214620Z\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Harry Potter y el Perro Padrino\",\n            \"author\": \"J.K. Rowling\",\n            \"isbn\": \"978-84-9838-362-3\",\n            \"cost_usd\": \"18.99\",\n            \"selling_price_local\": \"23.18\",\n            \"stock_quantity\": 25,\n            \"category\": \"Fantasía\",\n            \"supplier_country\": \"GB\",\n            \"created_at\": \"2026-03-31T18:06:38.119450Z\",\n            \"updated_at\": \"2026-03-31T18:09:56.907359Z\"\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1. Crear Libro",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"El Quijote\",\r\n    \"author\": \"Miguel de Cervantes\",\r\n    \"isbn\": \"978-84-376-0494-7\",\r\n    \"cost_usd\": 15.99,\r\n    \"stock_quantity\": 25,\r\n    \"category\": \"Literatura Clásica\",\r\n    \"supplier_country\": \"ES\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/books/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            ""
+          ]
+        },
+        "description": "Crea un nuevo libro en el inventario. Valida formato de ISBN, duplicados y valores negativos."
+      },
+      "response": [
+        {
+          "name": "Crear Harry Potter",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Harry Potter y el prisionero de Azkaban\",\r\n  \"author\": \"J.K. Rowling\",\r\n  \"isbn\": \"978-84-9838-362-3\",\r\n  \"cost_usd\": 18.99,\r\n  \"stock_quantity\": 25,\r\n  \"category\": \"Fantasía\",\r\n  \"supplier_country\": \"GB\",\r\n  \"description\": \"En su tercer año en Hogwarts, Harry Potter se enfrenta a nuevos peligros cuando Sirius Black, un prisionero fugitivo de Azkaban, escapa y parece estar buscándolo. Mientras secretos del pasado comienzan a salir a la luz, Harry, junto a sus amigos Ron y Hermione, descubre verdades que cambiarán su destino para siempre. Con una narrativa más oscura y madura, esta entrega profundiza en la amistad, el miedo y la identidad, consolidando la saga como un clásico moderno de la literatura fantástica.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/books/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Tue, 31 Mar 2026 18:06:38 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.11.15"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "308"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 2,\n    \"title\": \"Harry Potter y el prisionero de Azkaban\",\n    \"author\": \"J.K. Rowling\",\n    \"isbn\": \"978-84-9838-362-3\",\n    \"cost_usd\": \"18.99\",\n    \"selling_price_local\": null,\n    \"stock_quantity\": 25,\n    \"category\": \"Fantasía\",\n    \"supplier_country\": \"GB\",\n    \"created_at\": \"2026-03-31T18:06:38.119450Z\",\n    \"updated_at\": \"2026-03-31T18:06:38.120118Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "2. Listar todos los libros",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/books/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            ""
+          ]
+        },
+        "description": "Devuelve una lista de todos los libros en el inventario, incluyendo paginación nativa."
+      },
+      "response": [
+        {
+          "name": "Listar todos los libros",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/books/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Tue, 31 Mar 2026 18:07:15 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.11.15"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "660"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 2,\n            \"title\": \"Harry Potter y el prisionero de Azkaban\",\n            \"author\": \"J.K. Rowling\",\n            \"isbn\": \"978-84-9838-362-3\",\n            \"cost_usd\": \"18.99\",\n            \"selling_price_local\": null,\n            \"stock_quantity\": 25,\n            \"category\": \"Fantasía\",\n            \"supplier_country\": \"GB\",\n            \"created_at\": \"2026-03-31T18:06:38.119450Z\",\n            \"updated_at\": \"2026-03-31T18:06:38.120118Z\"\n        },\n        {\n            \"id\": 1,\n            \"title\": \"El Quijote\",\n            \"author\": \"Miguel de Cervantes\",\n            \"isbn\": \"978-84-376-0494-7\",\n            \"cost_usd\": \"15.99\",\n            \"selling_price_local\": \"19.52\",\n            \"stock_quantity\": 25,\n            \"category\": \"Literatura Clásica\",\n            \"supplier_country\": \"ES\",\n            \"created_at\": \"2026-03-31T17:57:57.140567Z\",\n            \"updated_at\": \"2026-03-31T18:00:05.214620Z\"\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "3. Obtener detalle de libro",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/books/1/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            "1",
+            ""
+          ]
+        },
+        "description": "Obtiene la información detallada de un libro específico utilizando su ID."
+      },
+      "response": [
+        {
+          "name": "Obtener detalle del Quijote",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/books/1/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                "1",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Tue, 31 Mar 2026 18:07:52 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.11.15"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "299"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 1,\n    \"title\": \"El Quijote\",\n    \"author\": \"Miguel de Cervantes\",\n    \"isbn\": \"978-84-376-0494-7\",\n    \"cost_usd\": \"15.99\",\n    \"selling_price_local\": \"19.52\",\n    \"stock_quantity\": 25,\n    \"category\": \"Literatura Clásica\",\n    \"supplier_country\": \"ES\",\n    \"created_at\": \"2026-03-31T17:57:57.140567Z\",\n    \"updated_at\": \"2026-03-31T18:00:05.214620Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "4. Actualizar Libro",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"El Quijote (Edición Especial)\",\r\n    \"author\": \"Miguel de Cervantes\",\r\n    \"isbn\": \"978-84-376-0494-7\",\r\n    \"cost_usd\": 15.99,\r\n    \"stock_quantity\": 20,\r\n    \"category\": \"Literatura Clásica\",\r\n    \"supplier_country\": \"ES\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/books/2/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            "2",
+            ""
+          ]
+        },
+        "description": "Actualiza la información completa de un libro existente en el inventario."
+      },
+      "response": [
+        {
+          "name": "Actualizar Harry Potter",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Harry Potter y el Perro Padrino\",\r\n  \"author\": \"J.K. Rowling\",\r\n  \"isbn\": \"978-84-9838-362-3\",\r\n  \"cost_usd\": 18.99,\r\n  \"stock_quantity\": 25,\r\n  \"category\": \"Fantasía\",\r\n  \"supplier_country\": \"GB\",\r\n  \"description\": \"En su tercer año en Hogwarts, Harry Potter se enfrenta a nuevos peligros cuando Sirius Black, un prisionero fugitivo de Azkaban, escapa y parece estar buscándolo. Mientras secretos del pasado comienzan a salir a la luz, Harry, junto a sus amigos Ron y Hermione, descubre verdades que cambiarán su destino para siempre. Con una narrativa más oscura y madura, esta entrega profundiza en la amistad, el miedo y la identidad, consolidando la saga como un clásico moderno de la literatura fantástica.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/books/2/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                "2",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Tue, 31 Mar 2026 18:09:56 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.11.15"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "303"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 2,\n    \"title\": \"Harry Potter y el Perro Padrino\",\n    \"author\": \"J.K. Rowling\",\n    \"isbn\": \"978-84-9838-362-3\",\n    \"cost_usd\": \"18.99\",\n    \"selling_price_local\": \"23.18\",\n    \"stock_quantity\": 25,\n    \"category\": \"Fantasía\",\n    \"supplier_country\": \"GB\",\n    \"created_at\": \"2026-03-31T18:06:38.119450Z\",\n    \"updated_at\": \"2026-03-31T18:09:56.907359Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "5. Eliminar Libro",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/books/1/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            "1",
+            ""
+          ]
+        },
+        "description": "Elimina un libro del sistema permanentemente usando su ID."
+      },
+      "response": [
+        {
+          "name": "Eliminar Libro id 3",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/books/3/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                "3",
+                ""
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Tue, 31 Mar 2026 18:11:36 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.11.15"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "0"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "6. Calcular precio local (Integración Externa)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/books/1/calculate-price/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            "1",
+            "calculate-price",
+            ""
+          ]
+        },
+        "description": "Se conecta a una API externa de tasas de cambio, convierte el costo a moneda local, aplica un margen del 40% y guarda el precio de venta local en la base de datos."
+      },
+      "response": [
+        {
+          "name": "Calcular precio local id 2",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8000/api/books/2/calculate-price/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "books",
+                "2",
+                "calculate-price",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Tue, 31 Mar 2026 18:08:19 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.11.15"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "POST, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "198"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"book_id\": 2,\n    \"cost_usd\": 18.99,\n    \"exchange_rate\": 0.872,\n    \"cost_local\": 16.56,\n    \"margin_percentage\": 40,\n    \"selling_price_local\": 23.18,\n    \"currency\": \"EUR\",\n    \"calculation_timestamp\": \"2026-03-31T18:08:19.490467+00:00\"\n}"
+        }
+      ]
+    }
+  ]
+}
