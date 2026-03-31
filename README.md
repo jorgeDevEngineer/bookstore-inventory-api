@@ -42,7 +42,7 @@ Sigue estos pasos para ejecutar el proyecto en tu máquina local:
 
 ### 1. Clonar el repositorio
 ```bash
-git clone [<repository-url>](https://github.com/jorgeDevEngineer/bookstore-inventory-api.git)
+git clone https://github.com/jorgeDevEngineer/bookstore-inventory-api.git
 cd bookstore-inventory-api
 ```
 
