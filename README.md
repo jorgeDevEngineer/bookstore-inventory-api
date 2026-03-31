@@ -42,7 +42,7 @@ Sigue estos pasos para ejecutar el proyecto en tu máquina local:
 
 ### 1. Clonar el repositorio
 ```bash
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/jorgeDevEngineer/bookstore-inventory-api.git)
 cd bookstore-inventory-api
 ```
 
@@ -125,4 +125,3 @@ Solo importa el archivo en Postman y asegúrate de que el contenedor esté corri
     *   `500 Internal Server Error`: Errores inesperados o fallos en servicios externos.
 
 ---
-© 2026 Nextep Solutions.
