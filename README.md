@@ -27,9 +27,18 @@ Una solución robusta y moderna para la gestión de inventarios de librerías, c
 
 ---
 
+## ⚙️ Requisitos Previos
+
+Antes de comenzar, asegúrate de tener instalados los siguientes componentes:
+
+*   **Docker Desktop** (incluye Docker Engine y Docker Compose).
+*   **Git** (para clonar el repositorio).
+
+---
+
 ## 🚀 Instalación y Puesta en Marcha
 
-Sigue estos pasos para ejecutar el proyecto en tu máquina local sin necesidad de instalar dependencias globales:
+Sigue estos pasos para ejecutar el proyecto en tu máquina local:
 
 ### 1. Clonar el repositorio
 ```bash
@@ -73,6 +82,19 @@ docker-compose exec web python manage.py createsuperuser
 | `PATCH` | `/api/books/{id}/` | Actualización parcial |
 | `DELETE` | `/api/books/{id}/` | Eliminar libro |
 
+**Ejemplo de Payload para `POST /api/books/`:**
+```json
+{
+    "title": "El Quijote",
+    "author": "Miguel de Cervantes",
+    "isbn": "978-84-376-0494-7",
+    "cost_usd": 15.99,
+    "stock_quantity": 25,
+    "category": "Literatura Clásica",
+    "supplier_country": "ES"
+}
+```
+
 ### 🔍 Funciones Especiales
 | Método | Endpoint | Acción |
 | :--- | :--- | :--- |
@@ -96,6 +118,11 @@ Solo importa el archivo en Postman y asegúrate de que el contenedor esté corri
 1.  **Manejo de Moneda:** Si la API externa de tasas de cambio no está disponible, el sistema utiliza un *fallback* automático (0.85 EUR/USD) para garantizar la continuidad operativa.
 2.  **Precisión Matemática:** Se utiliza el tipo de dato `Decimal` en toda la lógica financiera para evitar errores de precisión de punto flotante.
 3.  **Seguridad:** Los campos `created_at`, `updated_at` y `selling_price_local` son de solo lectura mediante el serializador para proteger la integridad de los datos.
+4.  **Manejo de Errores:** La API utiliza códigos de estado HTTP estándar:
+    *   `200 OK` / `201 Created`: Solicitudes exitosas.
+    *   `400 Bad Request`: Errores de validación (ej. ISBN inválido o campos faltantes).
+    *   `404 Not Found`: Cuando no existe el recurso solicitado.
+    *   `500 Internal Server Error`: Errores inesperados o fallos en servicios externos.
 
 ---
 © 2026 Nextep Solutions.
