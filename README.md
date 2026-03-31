@@ -50,3 +50,14 @@ The API will be available at:
 
 - It is necessary to run migrations before using the API.
 - Ensure Docker is running correctly before starting.
+
+---
+
+## 🛠️ Endpoints de la API
+
+### Libros (Inventory)
+- [cite_start]**Listar todos:** `GET /api/books/` [cite: 38]
+- [cite_start]**Crear libro:** `POST /api/books/` [cite: 37]
+- [cite_start]**Detalle de libro:** `GET /api/books/<id>/` [cite: 38]
+- [cite_start]**Búsqueda por categoría:** `GET /api/books/?category=Literatura` [cite: 42]
+- [cite_start]**Stock Bajo:** `GET /api/books/low-stock/?threshold=5` [cite: 43]
